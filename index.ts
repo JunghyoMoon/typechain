@@ -2,7 +2,7 @@ const name = "junghyo",
     age = 27, 
     gender = "male";
 
-const sayHi = (name, age, gender) => {
+const sayHi = (name, age, gender?) => {
     console.log(`
         Hello! nice you meet you!
         Is your name ${name}?
@@ -13,4 +13,6 @@ const sayHi = (name, age, gender) => {
 
 sayHi(name, age, gender);
 
+
+// 이건 왜 필요하죠??
 export {};

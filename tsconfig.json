@@ -3,10 +3,11 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "ES2015",
-		"sourceMap": true
+		"sourceMap": true,
+		"outDir": "dist"
 	},
 	// 컴파일할 파일의 배열
-	"include": ["index.ts"],
+	"include": ["src/**/*"],
 	// 컴파일에서 제외할 파일의 배열
 	"exclude": ["node_modules"]
 }

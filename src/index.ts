@@ -7,7 +7,7 @@ const sayHi = (name:string, age:number, gender:string): string => {
         Hello! nice you meet you!
         Is your name ${name}?
         You are ${age} years old.
-        And you are ${gender}!
+        And you are ${gender}! Is it right?
     `;
     return greeting;
 }

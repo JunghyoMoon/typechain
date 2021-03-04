@@ -2,7 +2,7 @@ const name = "junghyo",
     age = 27, 
     gender = "male";
 
-const sayHi = (name:string, age:number, gender:string): string => {
+const sayHi = (name:string, age:number, gender:string): void => {
     const greeting:string = `
         Hello! nice you meet you!
         Is your name ${name}?

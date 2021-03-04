@@ -2,6 +2,7 @@ const name = "junghyo",
     age = 27, 
     gender = "male";
 
+// what is 'void' ??
 const sayHi = (name:string, age:number, gender:string): void => {
     const greeting:string = `
         Hello! nice you meet you!

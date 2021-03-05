@@ -2,6 +2,13 @@ const name = "junghyo",
     age = 27, 
     gender = "male";
 
+const moon = {
+    name: "junghyo",
+    gender: "male",
+    weight: 70,
+    height: 175
+}
+
 // what is 'void' ??
 const sayHi = (name:string, age:number, gender:string): string => {
     const greeting:string = `

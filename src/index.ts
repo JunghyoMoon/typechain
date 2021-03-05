@@ -3,7 +3,7 @@ const name = "junghyo",
     gender = "male";
 
 // what is 'void' ??
-const sayHi = (name:string, age:number, gender:string): void => {
+const sayHi = (name:string, age:number, gender:string): string => {
     const greeting:string = `
         Hello! nice you meet you!
         Is your name ${name}?

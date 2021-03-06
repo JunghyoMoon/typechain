@@ -6,7 +6,21 @@ class Block {
     public prevHash: string;
     public data: string;
     public timestamp: number;
-    constructor(index: number, hash: string, prevHash: string, data: string, timestamp: number) {
+
+    static calculateBlockHash = (
+        index: number,
+        prevHash: string,
+        timestamp: number,
+        data: string
+    ): string => CryptoJS.SHA256(index + prevHash + timestamp + data).toString();
+
+    constructor(
+        index: number,
+        hash: string,
+        prevHash: string,
+        data: string,
+        timestamp: number
+    ) {
         this.index = index;
         this.hash = hash;
         this.prevHash = prevHash;
@@ -17,8 +31,8 @@ class Block {
 
 const genesisBlock:Block = new Block(0, "o134081h3ksjd093", "", "hello world", 123456);
 
-let blockChain: [Block] = [genesisBlock];
+let blockchain: Block[] = [genesisBlock];
 
-console.log(blockChain);
+const getBlockchain = (): Block[] => blockchain;
 
 export {};

@@ -1,16 +1,16 @@
-//ts의 인터페이스: 오브젝트의 데이터 형태를 결정?
-
-interface Human {
-    name: string,
-    age: number,
-    gender: string
+class Human {
+    public name: string;
+    public age: number;
+    public gender: string;
+    constructor(name: string, age: number, gender?: string) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender || "male";
+    }
 }
 
-const person = {
-    name: "junghyo",
-    age: 27,
-    gender: "male"
-};
+const junghyo = new Human("Junghyo Moon", 27);
+const jisoo = new Human("Jisoo Kim", 27, "female");
 
 // what is 'void' ??
 const sayHi = (person: Human): string => {
@@ -23,8 +23,10 @@ const sayHi = (person: Human): string => {
     return greeting;
 }
 
-const hello = sayHi(person);
-console.log(hello);
+console.log(
+    sayHi(junghyo),
+    sayHi(jisoo)
+);
 
 // 이건 왜 필요하죠??
 export {};

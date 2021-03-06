@@ -34,5 +34,6 @@ const genesisBlock:Block = new Block(0, "o134081h3ksjd093", "", "hello world", 1
 let blockchain: Block[] = [genesisBlock];
 
 const getBlockchain = (): Block[] => blockchain;
+const getLatestBlock = (): Block => blockchain[blockchain.length - 1];
 
 export {};

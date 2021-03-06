@@ -1,32 +1,22 @@
-class Human {
-    public name: string;
-    public age: number;
-    public gender: string;
-    constructor(name: string, age: number, gender?: string) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender || "male";
+class Block {
+    public index: number;
+    public hash: string;
+    public prevHash: string;
+    public data: string;
+    public timestamp: number;
+    constructor(index: number, hash: string, prevHash: string, data: string, timestamp: number) {
+        this.index = index;
+        this.hash = hash;
+        this.prevHash = prevHash;
+        this.data = data;
+        this.timestamp = timestamp;
     }
 }
 
-const junghyo = new Human("Junghyo Moon", 27);
-const jisoo = new Human("Jisoo Kim", 27, "female");
+const genesisBlock:Block = new Block(0, "o134081h3ksjd093", "", "hello world", 123456);
 
-// what is 'void' ??
-const sayHi = (person: Human): string => {
-    const greeting:string = `
-        Hello! nice you meet you!
-        Is your name ${person.name}?
-        You are ${person.age} years old.
-        And you are ${person.gender}! Is it right?
-    `;
-    return greeting;
-}
+let blockChain: [Block] = [genesisBlock];
 
-console.log(
-    sayHi(junghyo),
-    sayHi(jisoo)
-);
+console.log(blockChain);
 
-// 이건 왜 필요하죠??
 export {};

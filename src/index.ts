@@ -70,9 +70,16 @@ const createNewBlock = (data: string): Block => {
 	return newBlock;
 };
 
-const isBlockValid = (
-	candidateBlock: Block,
-	previousBlock: Block
-): boolean => {};
+const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
+	if (!Block.validateStructure(candidateBlock)) {
+		return false;
+	} else if (previousBlock.index + 1 !== candidateBlock.index) {
+		return false;
+	} else if (previousBlock.hash !== candidateBlock.prevHash) {
+		return false;
+	} else {
+		return true;
+	}
+};
 
 export {};

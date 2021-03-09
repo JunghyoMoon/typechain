@@ -14,6 +14,13 @@ class Block {
 		data: string
 	): string => CryptoJS.SHA256(index + prevHash + timestamp + data).toString();
 
+	static validateStructure = (aBlock: Block): boolean =>
+		typeof aBlock.index === "number" &&
+		typeof aBlock.hash === "string" &&
+		typeof aBlock.prevHash === "string" &&
+		typeof aBlock.timestamp === "number" &&
+		typeof aBlock.data === "string";
+
 	constructor(
 		index: number,
 		hash: string,
@@ -63,6 +70,9 @@ const createNewBlock = (data: string): Block => {
 	return newBlock;
 };
 
-console.log(createNewBlock("hello world"), createNewBlock("bye-bye"));
+const isBlockValid = (
+	candidateBlock: Block,
+	previousBlock: Block
+): boolean => {};
 
 export {};
